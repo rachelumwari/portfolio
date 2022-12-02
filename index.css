@@ -1,0 +1,504 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #343237;
+    color: #fff;
+
+}
+#header{
+    position: fixed;
+    width: 100%;
+    top:0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px;
+    font-size: xx-small;
+    transition: 0.5s linear;
+    background: #fff;
+    text-decoration: none;
+    color: #070606;
+  
+
+}
+ul ol{
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+    text-decoration: none;
+    /* text-align: center; */
+    font-size: 0px;
+}
+.navbar a{
+    padding:8px 17px;
+    color:var(--bg-color);
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-decoration: none;
+}
+.navbar a:hover{
+    background: var(--main-color);
+    border-radius: 0.2rem;
+    transition: 0.2s all linear;
+
+}
+
+.container{
+    /* padding: 10px 10px; */
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    
+    /* color: black; */
+
+}
+/* .logo{
+    width: 1400px ;
+} */
+
+nav ul ol{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul ol a{
+    color: black;
+    text-decoration: none;
+    font-size: 18px; 
+    float: right;
+    position: relative;
+}
+
+nav ul ol a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #C34A36;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s ;
+    
+
+}
+
+nav ul ol a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 200px;
+    margin-left: 75px;
+    font-size: 30px;
+    
+    /* display: flex; */
+}
+header-text h1{
+    font-size: 40px;
+    margin-top: 60px;
+    float: right;
+    display: flex;
+    /* text-align: center; */
+
+}
+
+.picture{
+    margin: 20px;
+    margin-top: -350px;
+    /* float: right; */
+    margin-left: 800px;
+    /* width: 100%;
+    border-radius: 15px; */
+}
+
+/* ---------------My Skills-------------- */
+
+#skill{
+    margin: 90px;
+    margin-top: 50px;
+}
+.skill ul li{
+    margin-left: 70px;
+    font-size: 20px;
+}
+
+.computer{
+  /* font-size: 18px; */
+  margin-left: 700px;
+  margin-top: -220px;
+}
+.computer ul li{
+    font-size: 25px;
+    display: flex;
+    margin-left: 50px;
+    margin: 20px;
+    text-justify: 20px;
+}
+
+/* ------------------About-------------- */
+
+#about{
+    margin: 90px;
+    margin-top: 220px;
+    weight: 600;
+    border-radius: px;
+}
+.about img{
+    margin: 20px;
+}
+.p1{
+    font-family: sans-serif;
+    font-size: x-large;
+    /* display: flex; */
+    margin-left: 404px;
+    margin-top: -430px;
+}
+.p2{
+    font-size: 30px;
+}
+.p3{
+    font-size: 20px;
+}
+
+
+.contact{
+    font-size: 12px;
+    margin-left: 404px;
+}
+
+.contact2{
+    /* font-size: 12px; */
+    margin-left: 150px;
+    margin-top: -106px;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    background-color: #343237;
+  }
+  .button1 {
+    background-color: #C34A36;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 30px;
+    margin-right: -101px;
+    cursor: pointer;
+  }
+
+  /* --------------------Project------------ */
+#project{
+    display: flex;
+    text-align: center;
+    margin-left: 600px;
+    font-size: 25px;
+    
+
+}
+  .project1{
+    background-color: #29272B;
+    /* padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px; */
+    width: 70%;
+    height: 450px;
+    margin-left: -650px;
+    margin-top: 120px;
+    /* margin-right: 40px; */
+  }
+
+.button-pro1{
+    margin-left: 20px;
+    display: flex;
+    letter-spacing: 2;
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    border: #C34A36;
+    margin-left: 200px;
+    margin-top: 40px;
+
+    
+}
+
+.button2 {
+    background-color: #29272B;
+    width: 120%;
+    color:white;
+    padding: 5px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #C34A36;
+    border-radius: 18px;
+    height: 30px;
+    cursor: pointer;
+    /* margin-left: 2px; */
+  }
+  .project2{
+    background-color: #29272B;
+    /* padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-right: 10px; */
+    width: 70%;
+    height: 450px;
+    margin-left: 100px;
+    margin-top: 120px;
+  }
+
+  .button-pro2{
+    margin-left: 20px;
+    display: flex;
+    letter-spacing: 2;
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    border: #C34A36;
+    margin-left: 200px;
+    margin-top: 40px;
+
+    
+}
+
+.button3 {
+    background-color: #29272B;
+    width: 120%;
+    color:white;
+    padding: 5px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #C34A36;
+    border-radius: 18px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  /* -----------------------------------blog----------- */
+
+
+  #blog{
+    display: flex;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 25px;
+    
+  }
+
+  .div-blog1{
+
+    background-color: #29272B;
+    width: 70%;
+    height: auto;
+    margin-left: 150px;
+    
+  }
+  #headerimg{
+    display: flex;
+    padding: 20px 20px;
+  }
+
+  input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  /* #contact{
+  
+    text-align: center;
+  }
+  .line{
+    display: flex;
+  } */
+  .search{
+
+    width: 50%;
+    margin-top: 30px;
+    margin-left: 700px;
+  }
+
+  .blog-comment input{
+    background-color: #343237;
+    color: whitesmoke;
+    width: 70%;
+    height: 80px;
+    border-radius: 10px;
+    border:1px solid #C34A36;
+    margin-left: 200px;
+    margin-top: 30px;
+  }
+
+  .button-comment{
+    margin-left: 900px;
+  }
+/* ------------------------------------------contact----------- */
+
+
+  #contact{
+    
+  }
+  .line input{
+    display:flex;
+    background-color: #343237;
+    border-radius: 8px;
+    color: #fff;
+    width: 42%;
+    margin-left: 20px;
+  }
+
+  .line textarea{
+    background-color: #343237;
+    width: 400px;
+    color: white;
+    margin-left: 20px;
+    border-radius: 8px;
+  }
+
+  .allcontact{
+    margin-left: 400px;
+  }
+  .button-message button {
+    margin-left: 100px;
+    border-radius: 8px;
+  }
+  .copyright{
+    padding: 20px 30px;
+    text-align: center;
+    background:#C34A36;
+}
+
+
+/* ------------------login--------------------- */
+
+
+#login{
+  text-align: center;
+  margin-top: 7%;
+  /* background-color: #fff;
+  color: #070606; */
+  /* width: 400px; */
+  /* height: auto; */
+  border-radius: 20px;
+  border: 2px solid #343237;
+
+
+}
+.h1{
+  margin-left: 50px;
+  margin-top: 20px;
+
+}
+
+#login input{
+  border-radius: 20px;
+  border: #343237;
+  background-color: #d7cfe4;
+  color: #070606;
+}
+
+#login label{
+  margin-left: -340px;
+  margin-top: -80px;  
+}
+
+a{
+  color:#fff;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+/* ------------------------signup------------ */
+
+.signup{
+  margin-left: 694px; 
+  margin-top: -20px; 
+  font-size: 15px;
+  
+}
+
+#signup{
+  text-align: center;
+  margin-top: 7%;
+  /* background-color: #fff;
+  color: #070606; */
+  /* width: 400px; */
+  /* height: auto; */
+  border-radius: 20px;
+  border: 2px solid #343237;
+}
+
+.h2{
+  margin-left: 50px;
+  margin-top: 20px;
+
+}
+
+#signup input{
+  border-radius: 20px;
+  border: #343237;
+  background-color: #d7cfe4;
+  color: #070606;
+}
+
+#signup label{
+  margin-left: -340px;
+  margin-top: -80px;  
+}
+
+a{
+  color:#fff;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
+}
+
+.login{
+  margin-left: 715px; 
+  margin-top: -20px; 
+  font-size: 15px;
+  
+  
+}
+
+@media screen and (max-width: 1219px){
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+  }
+
+  
+  
+}
+  
