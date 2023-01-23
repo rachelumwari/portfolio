@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Picture</title>
+    <link rel="stylesheet" href="homeAdmin.css">
+    <!-- <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">  -->
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2>Rachel UMWARI</h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="uploadView.html"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
+                </li>
+                <li>
+                    <a href="projectdashboard.html"><span><i class='bx bx-building'></i>&nbsp;Projects</span></a>
+                </li>
+                <li>
+                    <a href="BlogView.html" class="active"><span><i class='bx bxl-blogger' ></i>&nbsp;Blogs</span></a>
+                </li>
+                <li>
+                    <a href="contactdashboard.html"><span><i class='bx bxs-contact'></i>&nbsp;Contact</span></a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- <div class="logout">
+            <ul>
+                <li>
+                    <a href="login.html" style="color: white; font-size: 2em;"><span><i class='bx bx-log-out'></i>Logout</span></a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="">
+                    <!-- dashbordicom -->
+                    <i class='bx bxs-dashboard'></i>
+                </label>
+                Dashboard
+            </h2>
+
+            <div class="search-wrapper">
+               <i class='bx bx-search-alt-2'></i>
+                <input type="search" placeholder="search here"/>
+            </div>
+            <div class="user-wrapper">
+                <img src="picture1.jpeg" width="20px" height="30px" alt="">
+                <div>
+                    <h4>Umwari Rachel</h4>
+                    <small>Software Engineer</small>
+                </div>
+            </div>
+                
+        </header>
+        <main>
+
+            <div class="container">
+                <h2>Upload Blog</h2>
+              <form  onsubmit="addingblog()" id="blogForm">
+                <label>Blog Picture</label><br>
+                <input type="file" placeholder="Select Picture" id="picture" require>
+                <br>
+                <label for="title"> Blog Title</label><br>
+                <input type="text" id="title" name="title" placeholder="Enter Blog Name " style="width: 35em; height: 3.8em; text-align: center; color: black;"><br>
+                <label for="content">Content</label><br>
+                <textarea name="text" id="content" name="content" cols="30" rows="10" placeholder="Enter Blog Content" style="text-align: center;"></textarea>
+                <input type="submit" name="submit" value="Upload" style="margin-top: 2em;"> 
+                
+              </form>
+                <br>
+            </div>
+          
+            </main>
+        </div>
+        
+            </div>
+
+    <script src="../js/admin_protect.js"></script>
+    <!-- <script src="main2.js"></script> -->
+
+
+    <script>
+
+const form = document.querySelector('#blogForm');
+let token_1 = localStorage.getItem("token")
+let hash = location.href.split("#")[1]
+let id
+if(hash){
+    id = parseInt(hash.split("_")[0])
+}
+
+const blog = async()=>{
+    const request = await fetch(`https://backend-rachel.up.railway.app/Blog/getblog/${id}`, {
+        headers:{
+            Authorization:`Bearer ${token_1}`,
+            'Content-Type':'application/json'
+        },
+        method: "GET"
+    });
+    const response = await request.json();
+    console.log(response)
+    if(response.status== "successs"){
+        const title = document.getElementById("title")
+        const content = document.getElementById("content")
+        title.value = response.data.title;
+        content.value = response.data.content
+    }
+}
+blog()
+console.log(form)
+form.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    const title = form.title.value;
+    const content = form.content.value;
+    // const token = localStorage.getItem('token')
+
+    if(id){
+        const request = await fetch(`https://backend-rachel.up.railway.app/Blog/updateBlog/${id}`, {
+            headers:{
+                Authorization:`Bearer ${token}`,
+                'Content-Type':'application/json'
+                // Accept: 'application/json',
+            },
+            method: "PUT",
+            body: JSON.stringify( { title,content })
+            // headers: {'Content-Type':'application/json'}
+        });
+    
+        const response = await request.json();
+
+        if(response.status == 200) {
+            // window.location.assign('./AdminDashbo/blogdashboard.html')
+            // localStorage.setItem('token',response.token)
+            // localStorage.setItem('role',response.data.role)
+            location.assign('../portfolioPage.html')
+            
+        } 
+       else {
+            console.log(response)
+        }
+    }else{
+        const request = await fetch('https://backend-rachel.up.railway.app/Blog/addblog', {
+            headers:{
+                Authorization:`Bearer ${token}`,
+                'Content-Type':'application/json'
+                // Accept: 'application/json',
+            },
+            method: "POST",
+            body: JSON.stringify( { title,content })
+            // headers: {'Content-Type':'application/json'}
+        });
+    
+        const response = await request.json();
+        console.log(response)
+        // console.log(response)  
+        if(response.status == 200) {
+            // window.location.assign('./AdminDashbo/blogdashboard.html')
+            // localStorage.setItem('token',response.token)
+            // localStorage.setItem('role',response.data.role)
+            location.assign('../portfolioPage.html')
+            // location.href = 'portfolioPage.html'
+        } 
+       else {
+        console.log(response)
+            // let error = document.getElementById("error")
+            // let error_container = document.getElementById("error-container")
+            // error.innerHTML = response.message
+            // error_container.style = "display:block"
+            // setTimeout(()=>{
+            //     error_container.style = "display:none"
+            // },5000)
+        }
+
+    }
+})
+
+    </script>
+</body>
+</html>
+
+<style>
+    input[type=file]{
+        width: 90%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      
+      input[type=submit] {
+        background-color: #29272B;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #29272B;
+  }
+
+  label{
+    font-family: monospace;
+  }
+  
+  .container {
+ 
+    padding: 20px;
+    background-color: white;
+    width: 60%;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 250px;
+    padding-left: 50px;
+    border-radius: 4px;
+  }
+  
+    
+    </style>

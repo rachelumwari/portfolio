@@ -7,7 +7,7 @@
     <title>Upload Picture</title>
     <link rel="stylesheet" href="homeAdmin.css">
     <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
 
@@ -18,27 +18,32 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="HomeAdmin.html" span><i class='bx bxs-dashboard'></i>Dashboard</span></a>
-                </li>
-                <li>
-                    <a href="uploadView.html" class="active"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
+                    <a href="uploadView.html"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
                 </li>
                 <li>
                     <a href="projectdashboard.html"><span><i class='bx bx-building'></i>&nbsp;Projects</span></a>
                 </li>
                 <li>
-                    <a href="skilldashboard.html"><span><i class='bx bx-clipboard'></i>&nbsp;Skills</span></a>
-                </li>
-                <li>
-                    <a href="blogdashboard.html"><span><i class='bx bxl-blogger' ></i>&nbsp;Blogs</span></a>
+                    <a href="BlogView.html" class="active"><span><i class='bx bxl-blogger' ></i>&nbsp;Blogs</span></a>
                 </li>
                 <li>
                     <a href="contactdashboard.html"><span><i class='bx bxs-contact'></i>&nbsp;Contact</span></a>
                 </li>
 
+                <!-- <li>
+                    <a href="login.html"><span><i class='bx bx-log-out'></i>Logout</span></a>
+                </li> -->
+
             </ul>
         </div>
-    </div>
+        <div class="logout">
+            <ul>
+                <li>
+                    <a href="login.html" style="color: white; font-size: 2em;"><span><i class='bx bx-log-out'></i>Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>  
     <div class="main-content">
         <header>
             <h2>
@@ -65,66 +70,88 @@
         <main>
 
             <div class="container">
-                <h2>Upload Profile</h2>
-              <form  method="post">
-                <label for="fname">Profile</label><br>
-                <input type="file" id="fname" name="name" placeholder="Select Picture" require>
-                <br>
-                <input type="submit" value="Upload"> 
-              </form>
-                <br>
+  <button><a href="blogdashboard.html">Add New Blog</a></button>
+  <table id="blogtable">
+    <tr> 
+        <th>Title</th>
+      <th>Upload</th>
+      <th>Content</th>
+   
+    </tr>
+    
+    <tbody>
+        
+    </tbody> 
+</table>
+  
             </div>
           
             </main>
         </div>
         
             </div>
-
     
+    <script src="../js/admin_protect.js"></script>
+    <script src="main2.js"></script>
+    <script>window.onload=Displayblog()</script> 
 </body>
 </html>
 
 <style>
-    input[type=file]{
-        width: 90%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-      }
-      
-      
-      input[type=submit] {
-        background-color: #29272B;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #29272B;
-  }
-
-  label{
-    font-family: monospace;
-  }
+ 
   
   .container {
  
     padding: 20px;
     background-color: white;
-    width: 60%;
+    width: 90%;
     height: auto;
     margin-top: 40px;
-    margin-left: 250px;
+    margin-left: 50px;
     padding-left: 50px;
     border-radius: 4px;
   }
-  
-    
+  #blogtable{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#blogtable, #blogtable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+td img{
+    width: 60px;
+    height: 60px;
+}
+
+
+#blogtable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #343237;
+  color: white;
+}
+button{
+    background-color: #29272B;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        
+} 
+button a{
+    color: white;
+}  
+
+.logout ul li{
+    color: white;
+    /* background-color: white; */
+    margin-top: 30em;
+    margin-left: 2em;
+    size: 12em;
+}
     </style>

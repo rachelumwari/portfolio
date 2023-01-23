@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectDashboard</title>
+    <title>Upload Picture</title>
     <link rel="stylesheet" href="homeAdmin.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
 </head>
 <body>
-    
+
     <div class="sidebar">
         <div class="sidebar-brand">
             <h2>Rachel UMWARI</h2>
@@ -18,16 +18,10 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="HomeAdmin.html"><span><i class='bx bxs-dashboard'></i>Dashboard</span></a>
+                    <a href="uploadView.html" class="active"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
                 </li>
                 <li>
-                    <a href="uploadView.html"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
-                </li>
-                <li>
-                    <a href="projectdashboard.html" class="active"><span><i class='bx bx-building'></i>&nbsp;Projects</span></a>
-                </li>
-                <li>
-                    <a href="skilldashboard.html"><span><i class='bx bx-clipboard'></i>&nbsp;Skills</span></a>
+                    <a href="projectdashboard.html"><span><i class='bx bx-building'></i>&nbsp;Projects</span></a>
                 </li>
                 <li>
                     <a href="blogdashboard.html"><span><i class='bx bxl-blogger' ></i>&nbsp;Blogs</span></a>
@@ -64,38 +58,58 @@
         </header>
         <main>
 
-            <div class="uploadTable">
-                <img src="picture3.webp" height="50%" width="60%" style="border-radius: 5px;"><br>
+            <div class="container">
+                <h2>Upload Profile</h2>
+              <form  method="post">
+                <label for="fname">Profile</label><br>
                 <input type="file" id="fname" name="name" placeholder="Select Picture" require>
-            <table id="userDetail">
-                <div>
-
-                    <h1 style="background-color: white;">Description The project</h1><br>
-                    Title:<br><input type="text" name="title" style="border:1px solid black; border-radius: 5px; width: 328px;"><br>
-                    Details:<br><textarea type="text" name="message" style="border:1px solid black; border-radius: 5px"></textarea><br>
-                    <button class="button button2"><a href="">Submit</a></button>
-
-                </div>
-                
-                <tr>
-                <!-- <button class="button button2"><a href=""></a></button> -->
-                  
-                </tr>
-               
-              </table>
-      </div>
-           
+                <br>
+                <input type="submit" value="Upload"> 
+              </form>
+                <br>
+            </div>
+          
             </main>
         </div>
         
             </div>
-
-
+            <script src="../js/admin_protect.js"></script>
+    
 </body>
 </html>
 
 <style>
-    .uploadTable{
+    input[type=file]{
+        width: 90%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      
+      input[type=submit] {
+        background-color: #29272B;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #29272B;
+  }
+
+  label{
+    font-family: monospace;
+  }
+  
+  .container {
+ 
     padding: 20px;
     background-color: white;
     width: 60%;
@@ -104,29 +118,7 @@
     margin-left: 250px;
     padding-left: 50px;
     border-radius: 4px;
-    }
-
-    .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
   }
-  .button2 {
-    background-color: #29272B;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.button2 a{
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-}
-</style>
+  
+    
+    </style>

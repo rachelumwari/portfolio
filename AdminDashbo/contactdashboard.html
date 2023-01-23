@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Dashboard</title>
+    <title>Cantact Dashboard</title>
     <link rel="stylesheet" href="homeAdmin.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
+
 </head>
 <body>
     
@@ -18,22 +19,16 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="HomeAdmin.html" span><i class='bx bxs-dashboard'></i>Dashboard</span></a>
-                </li>
-                <li>
                     <a href="uploadView.html"><span><i class='bx bxs-folder-minus'></i>&nbsp;Upload Profile</span></a>
                 </li>
                 <li>
                     <a href="projectdashboard.html"><span><i class='bx bx-building'></i>&nbsp;Projects</span></a>
                 </li>
                 <li>
-                    <a href="skilldashboard.html" class="active"><span><i class='bx bx-clipboard'></i>&nbsp;Skills</span></a>
-                </li>
-                <li>
                     <a href="blogdashboard.html"><span><i class='bx bxl-blogger' ></i>&nbsp;Blogs</span></a>
                 </li>
                 <li>
-                    <a href="contactdashboard.html"><span><i class='bx bxs-contact'></i>&nbsp;Contact</span></a>
+                    <a href="contactdashboard.html" class="active"><span><i class='bx bxs-contact'></i>&nbsp;Contact</span></a>
                 </li>
 
             </ul>
@@ -62,28 +57,29 @@
             </div>
                 
         </header>
-            <main>
-                <table id="userDetail">
+            <main class="cusTable">
+                <table id="customers">
                     <tr>
-                      <th>Project</th>
-                      <th>Skills</th>
-                      <th>Blogs</th>
-                      <th>Skills</th>
+                      <th>Name</th>
+                      <th>Email</th>
+                      <th>Subject</th>
+                      <th>Message</th>
                     </tr>
                     <tr>
-                      <td>Online Prescription</td>
-                      <td>Critical thinking and problem solving.</td>
-                      <td>Why 100 days of code</td>
-                      <td>Kai Glory</td>
+                      <td>Alfred Eric</td>
+                      <td>alfred@gmail.com</td>
+                      <td>IT</td>
+                      <td>With her trademark humour, candour, and compassion, she also explores issues connected to race, gender, and visibility, encouraging readers to work through fear, find strength in community, and live with boldness. "The Light We Carry" will inspire readers to examine their own lives, identify their sources of gladness, and connect meaningfully in a turbulent world.</td>
                     </tr>
                     <tr>
-                      <td>InHerPower</td>
-                      <td>Teamwork and collaboration</td>
-                      <td>Why 100 day of code</td>
-                      <td>Kayle Kagame</td>
-          
+                      <td>Peace Ikenna</td>
+                      <td>peace@peace.com</td>
+                      <td>The Light We Carry</td>
+                      <td>"The Light We Carry" offers readers a series of fresh stories and insightful reflections on change, challenge, and power, including her belief that when we light up for others, we can illuminate the richness and potential of the world around us, discovering deeper truths and new pathways for progress.</td>
                     </tr>
+                   
                   </table>
+                  
           
           
             </main>
@@ -91,5 +87,19 @@
         
             </div>
 
+            <script src="../js/admin_protect.js"></script>
 </body>
 </html>
+<style>
+.cusTable{
+    margin-top: 10em;
+    padding: 10em;
+}
+
+#customers th{
+    background-color: #464346;
+
+}
+
+
+</style>

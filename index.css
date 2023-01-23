@@ -9,6 +9,7 @@ body{
     color: #fff;
 
 }
+
 #header{
     position: fixed;
     width: 100%;
@@ -32,10 +33,25 @@ ul ol{
 }
 .navbar{
     display: flex;
-    text-decoration: none;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    /* text-decoration: none; */
     /* text-align: center; */
     font-size: 0px;
 }
+
+.right-navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.left-navbar{
+    display: flex;
+    flex-direction: row;
+}
+
 .navbar a{
     padding:8px 17px;
     color:var(--bg-color);
@@ -300,10 +316,6 @@ hr {
     height: 30px;
     cursor: pointer;
   }
-
-  /* -----------------------------------blog----------- */
-
-
   #blog{
     display: flex;
     text-align: center;
@@ -360,8 +372,6 @@ hr {
   .button-comment{
     margin-left: 900px;
   }
-/* ------------------------------------------contact----------- */
-
 
   #contact{
     
@@ -396,10 +406,6 @@ hr {
     background:#C34A36;
 }
 
-
-/* ------------------login--------------------- */
-
-
 #login{
   text-align: center;
   margin-top: 7%;
@@ -431,12 +437,12 @@ hr {
 }
 
 a{
-  color:#fff;
+  /* color:#fff; */
   font-size: 14px;
-  text-decoration: none;
+  /* text-decoration: none; */
+  color: #034efc;
   margin: 15px 0;
 }
-/* ------------------------signup------------ */
 
 .signup{
   margin-left: 694px; 
@@ -474,21 +480,39 @@ a{
   margin-top: -80px;  
 }
 
-a{
-  color:#fff;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 15px 0;
-}
-
+/* ===============================================*/
 .login{
   margin-left: 715px; 
   margin-top: -20px; 
-  font-size: 15px;
-  
-  
+  font-size: 15px; 
 }
-
+.login-container{
+  margin-top:90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#loginForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#error-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+  background-color: #b50526;
+  padding: 10px;
+  border-radius: 6px;
+  display: none; 
+}
+#error{
+ /* display: none;  */
+}
 @media screen and (max-width: 1219px){
 
   .container{

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Article</title>
+</head>
+<body>
+    <section class="article">
+        <div class="image-container">
+            <img src="./picture3.jpeg" alt="">
+        </div>
+        <span class="title" id="title"></span>
+        <span class="date">Wed, 7th December 2022, 30 min ago</span>
+        <span class="author">
+            Rachel
+        </span>
+        <p class="content" id="content"></p>
+        <div class="comment-section" id="comment-section">
+            <span class="comment-section-title">Comments</span>
+            <!-- <div class="comment">
+                <span>Rachel</span>
+                <p>This article is incredible...🔥</p>
+            </div>
+            <div class="comment">
+                <span>Aubin</span>
+                <p>🔥🔥🔥🔥</p>
+            </div> -->
+        </div>
+        <form id="comment-form">
+            <input type="text" id="name" name="name" placeholder="name" style="width: 50%; margin-bottom: 20px;">
+            <input type="text" id="comment-text" name="comment" placeholder="Enter a comment...">
+            <button id="comment-btn">Comment</button>
+        </form>
+    </section>
+    <!-- <script src="./script.js"></script> -->
+    <script src="../js/getBlog.js"></script>
+</body>
+</html>

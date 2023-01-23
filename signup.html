@@ -29,24 +29,27 @@
 
 <div id="signup">
     <div class="h2">
-        <h1>Join Account today</h1><br><br>
-
+        <div id="error-container">
+            <span id="error" >error</span>
+        </div>
+        <h1 style="margin-left: -3em;">Join Account today</h1><br><br>
+<form id="registerForm">
     </div>
-    <label style="margin-left: -340px;">Names:</label><br/><input type="text" placeholder="Enter your name" name="email"><br/>
-    <label style="margin-left: -340px;">Email:</label><br/><input type="text" placeholder="Enter your email" name="email"><br/>
-    <label style="margin-left: -320px;">Password:</label><br/><input type="text" placeholder="Enter your password" name="password"><br/>
-    <label style="margin-left: -260px;">Confirm Password:</label><br/><input type="text" placeholder="Re-write password" name="confpass" style="margin-left:0px"><br/>
+    <label style="margin-left: -340px;">Names:</label><br/><input type="text" placeholder="Enter your name" id="name" name="name" style="width: 404px; height: 40px; padding: 15px;"><br/>
+    <label style="margin-left: -340px;">Email:</label><br/><input type="text" placeholder="Enter your email" id="email" name="email" style="width: 404px; height: 40px; padding: 15px;"><br/>
+    <label  style="margin-left: -340px;">Password:</label><br/><input type="password" placeholder="Enter your Password" id="pwd" name="pwd" style="width: 404px; height: 40px; padding: 15px;"><br/>
+    <!-- <input type="checkbox" onclick="Function()" style="margin-left: 10px;">Show Password -->
+    <!-- <label style="margin-left: -260px;">Confirm Password:</label><br/><input type="text" placeholder="Re-write password" name="confpass" style="margin-left:0px"><br/> -->
+    <button style="margin-left: -290px; margin-top: 30px; border-radius: 6px; padding: 10px;" id="submit" type="submit">Submit</button>
+
 </div> 
+</form>
 
-<div class="forgot" style="margin-left: 785px; margin-top: 10px;">
-    <a href="#"><u>Forgot password?</u></a>
-</div>
-
-<div class="account" style="margin-left: 480px; margin-top: 20px;">
-<h3>Have an account already?</h3>
+<div class="account" style="margin-left: 500px; margin-top: 22px;">
+<h3>Have an account already</h3>
 </div>
 <div class="login">
-<a href="login.html"><b>Login?</b></a>
+<a href="login.html" style="margin-left: 10px; font-size: 1.2em;"><b>Login</b></a>
 </div>
 
 <div class="continue" style="text-align: center; margin-top: 20px;">
@@ -58,5 +61,58 @@
     <p style="margin-top: -17px; margin-left: 70px; "><a href="https://accounts.google.com/signout/chrome/landing?continue=https%3A%2F%2Fmail.google.com&oc=https%3A%2F%2Fmail.google.com&hl=en-GB"><i class='bx bxl-google' style="background-color: white; color: darkgoldenrod;"></i></p>
     <p style="margin-top: -20px; margin-left: 220px; "><a href="https://web.facebook.com/?_rdc=1&_rdr"><i class='bx bxl-facebook-circle' style="background-color: blue;"></a></i></p>
 </div>
+
+<!-- <script defer src="main.js"></script> -->
+
+<script>
+
+    function Function() {
+      var x = document.getElementById("pwd");
+      if (x.type === "pwd") {
+        x.type = "text";
+      } else {
+        x.type = "pwd";
+      }
+    }
+
+    const form = document.querySelector('#registerForm');
+    form.addEventListener('submit', async(e) => {
+        e.preventDefault();
+        // const userPreference= form.userPreference.value;
+        // const phone = form.phone.value;
+        // const phoneCountryCode = form.countryCode.value;
+
+        const Fullname = form.name.value;
+        const email = form.email.value;
+        const password = form.pwd.value;
+        // const email = form.email.value;
+        // const id = "2020";
+        // const password = form.pwd.value;
+        const request = await fetch('https://backend-rachel.up.railway.app/User/signup', {
+            method: "POST",
+            body: JSON.stringify({ Fullname,email,password }),
+            headers: {'Content-Type':'application/json'}
+        });
+
+        const response = await request.json();
+       if(await response.status == 200) {
+        // alert(response.message);
+            window.location.assign('login.html')
+       } else {
+            let error = document.getElementById("error")
+            let error_container = document.getElementById("error-container")
+            error.innerHTML = response.message?response.message:response.error
+            error_container.style = "display:block"
+            setTimeout(()=>{
+                error_container.style = "display:none"
+            },5000)
+            console.error(response);
+       }
+    })
+    </script>
+
+
+
 </body>
 </html>
+

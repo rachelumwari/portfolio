@@ -65,6 +65,7 @@ header{
     left:345px;
     width: calc(100% - 345px);
     top:0;
+    background-color: #fff;
     z-index: 100;
 }
 header h2{
@@ -142,26 +143,26 @@ main{
 #project-data{
     margin-top: 40px;
 }
-#userDetail {
+#customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  #userDetail td, #userDetail th {
+  #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
   }
   
-  #userDetail tr:nth-child(even){background-color: #f2f2f2;}
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
   
-  #userDetail tr:hover {background-color: #ddd;}
+  #customers tr:hover {background-color: #ddd;}
   
-  #userDetail th {
+  #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color:#343237;
+    background-color:#C34A36;
     color: white;
   }
 
