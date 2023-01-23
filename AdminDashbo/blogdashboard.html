@@ -127,6 +127,7 @@ form.addEventListener('submit', async(e) => {
 
     if(id){
         const request = await fetch(`https://backend-rachel.up.railway.app/Blog/updateBlog/${id}`, {
+            // mode:"no-cors",
             headers:{
                 Authorization:`Bearer ${token}`,
                 'Content-Type':'application/json'

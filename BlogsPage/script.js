@@ -88,6 +88,7 @@ function renderPosts(post){
     like.addEventListener("click",async()=>{
         like.style="color: red;"
         const request = await fetch(`https://backend-rachel.up.railway.app/User/like/${post.id}`, {
+            // mode:"no-cors",
             headers:{
                 Authorization:`Bearer ${token}`,
                 'Content-Type':'application/json'
@@ -109,6 +110,7 @@ function renderPosts(post){
     })
     delete_btn.addEventListener("click",async(e)=>{
         const request = await fetch(`https://backend-rachel.up.railway.app/Blog/deleteblog/${post.id}`, {
+            // mode:"no-cors",
             headers:{
                 Authorization:`Bearer ${token}`,
                 'Content-Type':'application/json'
@@ -190,7 +192,8 @@ const getPosts = async ()=>{
             Authorization:`Bearer ${token}`,
             'Content-Type':'application/json'
         },
-        method: "GET"
+        method: "GET",
+        mode:'no-cors'
     });
     
     const response = await request.json();

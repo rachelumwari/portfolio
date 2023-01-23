@@ -9,7 +9,8 @@ comment_form.addEventListener("submit",async(e)=>{
     const name = comment_form.name.value;
     const comment = comment_form.comment.value;
 
-    const request = await fetch(`https://backend-rachel.up.railway.app/User/comment/${id}`, {        
+    const request = await fetch(`https://backend-rachel.up.railway.app/User/comment/${id}`, {
+        // mode:"no-cors",        
         method: "POST",
         body: JSON.stringify({ name,comment }),
         headers: {'Content-Type':'application/json'}
@@ -38,6 +39,7 @@ const renderComment = (comment)=>{
 }
 const getPost= async ()=>{
     const request = await fetch(`https://backend-rachel.up.railway.app/Blog/getblog/${id}`, {
+        // mode:"no-cors",
         headers:{
             Authorization:`Bearer ${token}`,
             'Content-Type':'application/json'

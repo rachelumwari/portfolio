@@ -89,6 +89,7 @@
         // const id = "2020";
         // const password = form.pwd.value;
         const request = await fetch('https://backend-rachel.up.railway.app/User/signup', {
+            // mode:"no-cors",
             method: "POST",
             body: JSON.stringify({ Fullname,email,password }),
             headers: {'Content-Type':'application/json'}
