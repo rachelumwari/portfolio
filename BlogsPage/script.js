@@ -192,8 +192,8 @@ const getPosts = async ()=>{
             Authorization:`Bearer ${token}`,
             'Content-Type':'application/json'
         },
-        method: "GET",
-        mode:'no-cors'
+        method: "GET"
+        // mode:'no-cors'
     });
     
     const response = await request.json();
