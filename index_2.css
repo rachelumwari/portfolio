@@ -18,18 +18,15 @@ body{
     text-decoration: none;
     color: #070606;
 }
-
-.container{
-    width: 80%;
+/* .container{
+    width: 100%;
     margin: auto;
+  
     
-}
-
+} */
 ul ol{
     text-decoration: none;
-
 }
-
 li{
     text-decoration: none;
 }
@@ -37,9 +34,6 @@ li{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* gap: 50px; */
-    /* text-decoration: none; */
-    /* text-align: center; */
     font-size: 0px;
 }
 
@@ -73,6 +67,11 @@ li{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 50px;
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 100%;
+
 }
 
 .header-text{
@@ -82,54 +81,25 @@ li{
 .picture{
    border-radius: 50% !important;
 }
-
-
-/* #skill{
-    margin: 90px;
-    margin-top: 50px;
-}
-.skill ul li{
-    margin-left: 70px;
-    font-size: 20px;
-} */
-
-
 .skills-list{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 20px;
     margin-bottom: 20px;
+    padding-left: 70px;
+    padding-right: 70px;
 }
-
-/* #soft-skills{
-    flex: 6;
-}
-
-#tech-skills{
-    flex: 6;
-} */
-
 .title{
     font-size: 40px;
     text-align: center;
     margin: 20px 0px;
 }
-
-
 .about-content{
     font-size: 25px;
 }
-
-#project{
-    /* display: flex;
-    text-align: center;
-    margin-left: 600px;
-    font-size: 25px; */
-}
 .button {
     background-color: #29272B;
-    /* width: 120%; */
     color:white;
     padding: 5px 2px;
     text-align: center;
@@ -139,7 +109,6 @@ li{
     border-radius: 18px;
     height: 30px;
     cursor: pointer;
-    /* margin-left: 2px; */
   }
 
 .btn{
@@ -164,18 +133,12 @@ li{
     justify-content: space-between;
     text-align: center;
     margin-top: 2em;
-    /* margin-left: 600px; */
-    /* font-size: 25px; */
 }
 
 .project{
     background-color: #29272B;
     border-radius: 6px;
     padding: 20px;
-    /* width: 70%;
-    height: 450px; */
-    /* margin-left: 100px;
-    margin-top: 120px; */
 }
 
 .project-skills{
@@ -228,7 +191,6 @@ li{
     justify-content: center;
     align-items: center;
     margin-bottom: 55px;
-    /* color: #fff; */
 }
 
 .form-input{
@@ -244,25 +206,15 @@ li{
 
 .form-label{
     display: block;
-    /* margin: 6px 0px; */
 }
 
 .footer{
     display: flex;
-    /* border-top: #070606 solid 1px; */
     justify-content: space-between;
     align-items: center;
     margin-top: 45px;
     margin-bottom: 25px;
 }
-
-/* .icon{
-    flex: 3;
-    display: flex;
-    justify-content: space-between;
-} */
-
-
 .containerr {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -278,7 +230,6 @@ li{
     display: flex;
     flex-direction: column;
     background: #000000;
-    /* background-color: #C34A36; */
     color: #ffffff;
     max-width: 30rem;
 }
@@ -407,3 +358,142 @@ form button {
     padding: 1rem 2rem;
     font-weight: 600;
 }
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: left;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+#blog{
+    padding-left: 70px;
+    /* grid-template-columns: auto auto; */
+}
+
+
+@media screen and (max-width: 858px){
+
+    .left-navbar{
+        flex-direction: column;
+        float: left;
+    }
+
+    .right-navbar{
+    display: flex;
+    flex-direction: column;
+    }
+    #me-section{
+        flex-direction: column;
+
+    }
+    #me-section .picture{
+      align-items: center;
+    } 
+    #me-section h1{
+        font-size: 20px;
+        margin-top: -25px;
+    }
+    #me-section .pp{
+        font-size: 20px;
+        margin-top: -20px;
+    }
+
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #D6EAF8;
+        top:80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        cursor: pointer;
+        /* display: none; */
+
+    }
+
+    nav ul ol{
+        display: block;
+        margin: 10px 0;
+        line-height: 30px;
+    }
+
+    nav ul ol a{
+        font-size: 20px;
+
+    }
+    nav ul ol a{
+        font-size: 16px;
+    }
+    .checkbtn{
+        display: block;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    
+    .left-navbar ol{
+        display: flex;
+        flex-direction: column;
+    }
+    .picture img{ 
+   display: flex;
+        flex-direction: column-reverse;
+        justify-content: center ;
+        align-items: center;
+    }
+      .skills-list{
+        flex-direction: column;
+        font-size: 10px;
+        text-align: center;
+      }  
+      .skills-list li{
+        text-align: start;
+      }
+      #tech-skills ol{
+        text-align: start;
+      }
+      #about .about-content{
+        font-size: 20px;
+        text-align: start;
+      }
+      .projects{
+        grid-template-columns: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .containerr{
+        grid-template-columns: auto;
+      
+      }
+      #blog{
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: -5px;
+      }
+    }
+    .header-text p{
+        display: flex;
+        flex-direction: column;
+        justify-content: center ;
+        size: 10px;
+        align-items: center;
+    }
+    .header-text h1{
+     display: flex;
+     text-align: center;
+
+    }
+   
+    #about{
+        justify-content: center;
+        padding-left: 70px;
+        padding-right: 70px;
+        width: 100%;
+    }
